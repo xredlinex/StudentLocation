@@ -3,16 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		977CF03D23B5F8A000C3C82A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF03C23B5F8A000C3C82A /* AppDelegate.swift */; };
 		977CF03F23B5F8A000C3C82A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF03E23B5F8A000C3C82A /* SceneDelegate.swift */; };
-		977CF04123B5F8A000C3C82A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF04023B5F8A000C3C82A /* ViewController.swift */; };
 		977CF04423B5F8A000C3C82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977CF04223B5F8A000C3C82A /* Main.storyboard */; };
 		977CF04623B5F8A100C3C82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977CF04523B5F8A100C3C82A /* Assets.xcassets */; };
 		977CF04923B5F8A100C3C82A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977CF04723B5F8A100C3C82A /* LaunchScreen.storyboard */; };
+		977CF05123B5FD6800C3C82A /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF05023B5FD6800C3C82A /* StudentClass.swift */; };
+		977CF05323B6063D00C3C82A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF05223B6063D00C3C82A /* LocationViewController.swift */; };
+		977CF05523B6065D00C3C82A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF05423B6065D00C3C82A /* ProfileViewController.swift */; };
+		977CF05723B6068400C3C82A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF05623B6068400C3C82A /* ListViewController.swift */; };
 		C71FA3E75B883A2C33B20C36 /* Pods_StudetnLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7731DE3D2D977D5BD842435 /* Pods_StudetnLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +24,14 @@
 		977CF03923B5F8A000C3C82A /* StudetnLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudetnLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		977CF03C23B5F8A000C3C82A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		977CF03E23B5F8A000C3C82A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		977CF04023B5F8A000C3C82A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		977CF04323B5F8A000C3C82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		977CF04523B5F8A100C3C82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		977CF04823B5F8A100C3C82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		977CF04A23B5F8A100C3C82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		977CF05023B5FD6800C3C82A /* StudentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
+		977CF05223B6063D00C3C82A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		977CF05423B6065D00C3C82A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		977CF05623B6068400C3C82A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D7731DE3D2D977D5BD842435 /* Pods_StudetnLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudetnLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC6CE53CF0F078FE22F1E97 /* Pods-StudetnLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudetnLocation.debug.xcconfig"; path = "Target Support Files/Pods-StudetnLocation/Pods-StudetnLocation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +54,6 @@
 				DAC6CE53CF0F078FE22F1E97 /* Pods-StudetnLocation.debug.xcconfig */,
 				348041140C4E885517C5B359 /* Pods-StudetnLocation.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,7 +80,10 @@
 			children = (
 				977CF03C23B5F8A000C3C82A /* AppDelegate.swift */,
 				977CF03E23B5F8A000C3C82A /* SceneDelegate.swift */,
-				977CF04023B5F8A000C3C82A /* ViewController.swift */,
+				977CF05023B5FD6800C3C82A /* StudentClass.swift */,
+				977CF05223B6063D00C3C82A /* LocationViewController.swift */,
+				977CF05623B6068400C3C82A /* ListViewController.swift */,
+				977CF05423B6065D00C3C82A /* ProfileViewController.swift */,
 				977CF04223B5F8A000C3C82A /* Main.storyboard */,
 				977CF04523B5F8A100C3C82A /* Assets.xcassets */,
 				977CF04723B5F8A100C3C82A /* LaunchScreen.storyboard */,
@@ -207,9 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				977CF04123B5F8A000C3C82A /* ViewController.swift in Sources */,
+				977CF05523B6065D00C3C82A /* ProfileViewController.swift in Sources */,
+				977CF05323B6063D00C3C82A /* LocationViewController.swift in Sources */,
 				977CF03D23B5F8A000C3C82A /* AppDelegate.swift in Sources */,
+				977CF05123B5FD6800C3C82A /* StudentClass.swift in Sources */,
 				977CF03F23B5F8A000C3C82A /* SceneDelegate.swift in Sources */,
+				977CF05723B6068400C3C82A /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
