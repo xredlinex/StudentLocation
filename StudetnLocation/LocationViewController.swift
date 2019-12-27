@@ -12,7 +12,6 @@ import GooglePlaces
 
 class LocationViewController: UIViewController {
     
-    
     @IBOutlet weak var mapView: GMSMapView!
     
     var students: [StudentProfile] = []
@@ -20,29 +19,23 @@ class LocationViewController: UIViewController {
     var defaultLongitutde = 30.5645016
     var defaultZoom: Float = 11
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         students = StudentsInfo().getStudents()
-        setMarkers(students)
+        _ = setMarkers(students)
         setDefaultCameraView()
-        
+        mapView.delegate = self
     }
-    
 
     @IBAction func didTapViewListActionButton(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "ListViewController") as! ListViewController
+        navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    
-    
-    
-
 }
 
-
+// MARK: - Set markers and cordinates
 extension LocationViewController {
     
     func setDefaultCameraView() {
@@ -70,13 +63,11 @@ extension LocationViewController {
                 defaultZoom = 18
             }
         }
-        
         let camera = GMSCameraPosition.camera(withLatitude: defaultLatitude,
                                               longitude: defaultLongitutde,
                                               zoom: defaultZoom)
         mapView.camera = camera
     }
-    
     
     func setMarkers(_ profile: [StudentProfile]) -> [GMSMarker] {
         var markers: [GMSMarker] = []
@@ -87,9 +78,26 @@ extension LocationViewController {
                 let marker = GMSMarker()
                 marker.position = cordinate
                 markers.append(marker)
+                marker.accessibilityLabel = studetns.studentId
                 marker.map = mapView
             }
         }
         return markers
     }
 }
+
+//  MARK: - Map Delegate
+extension LocationViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewCotnroller = storyboard.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+        for student in students {
+            if student.studentId == marker.accessibilityLabel {
+                viewCotnroller.recieveProfile = student
+            }
+        }
+        navigationController?.pushViewController(viewCotnroller, animated: true)
+        return true
+    }
+}
+

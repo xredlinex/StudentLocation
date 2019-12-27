@@ -17,18 +17,23 @@ class StudentProfile {
     var mail: String?
     var studentlatitude: Double?
     var studentLongitude: Double?
+    var studentId: String?
 }
 
 class StudentsInfo {
     func getStudents() -> [StudentProfile] {
         let firstStudent = StudentProfile()
-//        firstStudent.studentlatitude = 50.4442685
-//        firstStudent.studentLongitude = 30.4964163
+        firstStudent.studentId = "1001"
+        firstStudent.name = "Alekseii"
+        firstStudent.lastName = "Sorochan"
+        firstStudent.studentlatitude = 50.4442685
+        firstStudent.studentLongitude = 30.4964163
         
         
         let secondStudent = StudentProfile()
-//        secondStudent.studentlatitude = 50.4608976
-//        secondStudent.studentLongitude = 30.5223197
+        secondStudent.studentId = "1002"
+        secondStudent.studentlatitude = 50.4608976
+        secondStudent.studentLongitude = 30.5223197
         
         let thirdStudent = StudentProfile()
         thirdStudent.studentlatitude = 50.4676762
