@@ -12,6 +12,7 @@ class StudentProfile {
     var name: String?
     var lastName: String?
     var age: Int?
+    var city: String?
     var userPic: String?
     var phone: String?
     var mail: String?
@@ -26,6 +27,8 @@ class StudentsInfo {
         firstStudent.studentId = "1001"
         firstStudent.name = "Alekseii"
         firstStudent.lastName = "Sorochan"
+        firstStudent.age = 36
+        firstStudent.city = "Kyiv"
         firstStudent.studentlatitude = 50.4442685
         firstStudent.studentLongitude = 30.4964163
         

@@ -15,15 +15,21 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     
     var students: [StudentProfile] = []
+    var recieveData: StudentProfile?
     var defaultLatitude = 50.4304436
     var defaultLongitutde = 30.5645016
     var defaultZoom: Float = 11
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        students = StudentsInfo().getStudents()
-        _ = setMarkers(students)
+
+        if let student = recieveData {
+            students.append(student)
+            _ = setMarkers(students)
+        } else {
+            students = StudentsInfo().getStudents()
+            _ = setMarkers(students)
+        }
         setDefaultCameraView()
         mapView.delegate = self
     }
