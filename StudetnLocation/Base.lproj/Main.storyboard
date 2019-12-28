@@ -52,16 +52,48 @@
                                         <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwl-C1-OQJ">
+                                        <rect key="frame" x="324" y="0.0" width="90" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EM5-UQ-NHn">
+                                                <rect key="frame" x="29.5" y="11.5" width="40" height="27"/>
+                                                <color key="tintColor" red="1" green="0.75037735039999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="A5N-lh-2qz"/>
+                                                    <constraint firstAttribute="height" constant="30" id="tOt-O8-LtE"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2p-gU-tvI">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
+                                                <connections>
+                                                    <action selector="didTapShowAllLocationsActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zva-ch-oEh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="p2p-gU-tvI" secondAttribute="bottom" id="2CC-ir-Ho5"/>
+                                            <constraint firstAttribute="trailing" secondItem="p2p-gU-tvI" secondAttribute="trailing" id="93U-zj-XeL"/>
+                                            <constraint firstAttribute="width" constant="90" id="APf-nK-sNr"/>
+                                            <constraint firstItem="p2p-gU-tvI" firstAttribute="leading" secondItem="Iwl-C1-OQJ" secondAttribute="leading" id="O3H-Py-NXy"/>
+                                            <constraint firstItem="EM5-UQ-NHn" firstAttribute="centerX" secondItem="Iwl-C1-OQJ" secondAttribute="centerX" multiplier="1.1" id="VQf-Jz-4h8"/>
+                                            <constraint firstItem="p2p-gU-tvI" firstAttribute="top" secondItem="Iwl-C1-OQJ" secondAttribute="top" id="uh4-hM-Rd8"/>
+                                            <constraint firstItem="EM5-UQ-NHn" firstAttribute="centerY" secondItem="Iwl-C1-OQJ" secondAttribute="centerY" id="wgc-dq-y0R"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.074509803920000006" green="0.2274509804" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Iwl-C1-OQJ" secondAttribute="trailing" id="3mO-lT-MwY"/>
                                     <constraint firstItem="PDE-W2-JBM" firstAttribute="leading" secondItem="QY3-6a-jmq" secondAttribute="leading" id="58W-EY-2jh"/>
                                     <constraint firstItem="PDE-W2-JBM" firstAttribute="top" secondItem="QY3-6a-jmq" secondAttribute="top" id="Ng0-JI-VE1"/>
                                     <constraint firstItem="pI3-Z2-tk3" firstAttribute="top" secondItem="QY3-6a-jmq" secondAttribute="top" constant="5" id="P7L-rw-csh"/>
                                     <constraint firstAttribute="height" constant="50" id="S3y-UT-5sj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iwl-C1-OQJ" secondAttribute="bottom" id="Vv1-Ej-fKu"/>
                                     <constraint firstItem="pI3-Z2-tk3" firstAttribute="centerX" secondItem="QY3-6a-jmq" secondAttribute="centerX" id="amQ-t0-LPJ"/>
                                     <constraint firstAttribute="bottom" secondItem="PDE-W2-JBM" secondAttribute="bottom" id="gSO-ih-INo"/>
                                     <constraint firstAttribute="bottom" secondItem="pI3-Z2-tk3" secondAttribute="bottom" constant="5" id="hPM-VC-zfJ"/>
+                                    <constraint firstItem="Iwl-C1-OQJ" firstAttribute="top" secondItem="QY3-6a-jmq" secondAttribute="top" id="kKO-GI-Hrg"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVs-Ko-lJL" customClass="GMSMapView">
@@ -443,7 +475,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="mzY-B8-kLl"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m51-TQ-Hi9">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m51-TQ-Hi9">
                                                                 <rect key="frame" x="65" y="5" width="102" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -642,6 +674,7 @@
         <image name="ellipses.bubble" catalog="system" width="64" height="54"/>
         <image name="envelope" catalog="system" width="64" height="46"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="phone.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>

@@ -39,6 +39,12 @@ class LocationViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: "ListViewController") as! ListViewController
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    @IBAction func didTapShowAllLocationsActionButton(_ sender: Any) {
+        students = StudentsInfo().getStudents()
+        _ = setMarkers(students)
+        setDefaultCameraView()
+    }
 }
 
 // MARK: - Set markers and cordinates
@@ -74,10 +80,9 @@ extension LocationViewController {
                                               zoom: defaultZoom)
         mapView.camera = camera
     }
-    
+
     func setMarkers(_ profile: [StudentProfile]) -> [GMSMarker] {
         var markers: [GMSMarker] = []
-        
         for studetns in profile {
             if let latitude = studetns.studentlatitude, let longitude = studetns.studentLongitude {
                 let cordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -101,7 +106,6 @@ extension LocationViewController: GMSMapViewDelegate {
             if student.studentId == marker.accessibilityLabel {
                 viewCotnroller.recieveProfile = student
                 viewCotnroller.hideShowLocationButton = true
-                
             }
         }
         navigationController?.pushViewController(viewCotnroller, animated: true)

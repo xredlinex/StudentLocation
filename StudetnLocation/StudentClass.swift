@@ -29,9 +29,10 @@ class StudentsInfo {
         firstStudent.lastName = "Sorochan"
         firstStudent.age = 36
         firstStudent.city = "Kyiv"
+        firstStudent.phone = "+380630771072"
+        firstStudent.mail = "redik.line@gmail.com"
         firstStudent.studentlatitude = 50.4442685
         firstStudent.studentLongitude = 30.4964163
-        
         
         let secondStudent = StudentProfile()
         secondStudent.studentId = "1002"
@@ -45,7 +46,6 @@ class StudentsInfo {
         let fourthStudent = StudentProfile()
         fourthStudent.studentlatitude = 50.4421462
         fourthStudent.studentLongitude = 30.5189102
-        
         
         return [firstStudent, secondStudent, thirdStudent, fourthStudent]
     }

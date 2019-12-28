@@ -27,6 +27,7 @@ extension ListTableViewCell {
         avatarImageView.image = UIImage(named: student.userPic ?? "noUserPic")
         nameTextLabel.text = student.name ?? ""
         lastNameTextLabel.text = student.lastName ?? ""
+        
         viewForAvatarView.clipsToBounds = true
         viewForAvatarView.layer.cornerRadius = viewForAvatarView.frame.width / 2
         viewForAvatarView.layer.borderColor = UIColor.systemYellow.cgColor

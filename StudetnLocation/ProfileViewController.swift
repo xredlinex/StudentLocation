@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ProfileViewController: UIViewController {
     
@@ -16,30 +17,23 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var studentLastNameTextLabel: UILabel!
     @IBOutlet weak var studentAgeTextLabel: UILabel!
     @IBOutlet weak var studentCityTextLabel: UILabel!
-    
     @IBOutlet weak var callView: UIView!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var hideLocationHeightConstraint: NSLayoutConstraint!
     
-    
     var studentProfile = StudentProfile()
     var recieveProfile = StudentProfile()
     
-    
     var hideShowLocationButton = false
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         visualUIUpdate()
         studentProfile = recieveProfile
         feelUserData()
-        
-        
-
     }
     
     @IBAction func didTapGoBackButton(_ sender: Any) {
@@ -47,8 +41,13 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func didTapCalMeActionButton(_ sender: Any) {
+        if let number = studentProfile.phone {
+            makeACall(number)
+        }
     }
     @IBAction func didTapMessageMeActionButton(_ sender: Any) {
+//        if let
+        
     }
     
     @IBAction func didTapEmailMeActionButton(_ sender: Any) {
@@ -62,39 +61,66 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController {
-    func feelUserData() {
-        
-        if hideShowLocationButton == true {
-            hideLocationHeightConstraint.priority = UILayoutPriority(rawValue: 800)
+    func makeACall(_ studentPhone: String) {
+        guard let phoneNumber = URL(string: "tel://" + studentPhone) else {
+            return
         }
-        studentPictureImageView.image = UIImage(named: studentProfile.userPic ?? "noUserPic")
-        studentNameTextLabel.text = studentProfile.name ?? "no student name"
-        studentLastNameTextLabel.text = studentProfile.lastName ?? "no student last name"
-        studentCityTextLabel.text =  studentProfile.city?.uppercased() ?? "-"
+        UIApplication.shared.open(phoneNumber)
         
-        if let age = studentProfile.age {
-            studentAgeTextLabel.text = "\(age)"
+    }
+    func sendSms(_ studentPhone: String) {
+        if MFMessageComposeViewController.canSendText() {
+            let message = MFMessageComposeViewController()
+            message.messageComposeDelegate = self
+            message.recipients = [studentPhone]
+            message.body = ""
+            present(message, animated: true, completion: nil)
         }
+        
+    }
+    
+    func sendEmail(_ studentMail: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMessageComposeViewController()
+            mail.messageComposeDelegate = self
+            mail.recipients = [studentMail]
+            
+        }
+  
+    }
+    
+}
+
+extension ProfileViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result {
+        case .cancelled:
+            debugPrint("mail cancelled")
+        case .failed:
+            debugPrint("mail failed")
+        case .sent:
+            debugPrint("mail sent")
+        case .saved:
+            debugPrint("mail saved")
+        default:
+            debugPrint("something wrong")
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
-extension ProfileViewController {
-    func visualUIUpdate() {
-        setBackground()
-        callView.customButton()
-        messageView.customButton()
-        emailView.customButton()
-        locationView.customButton()
-        
-        
-        viewForUserPictureView.isUserInteractionEnabled = false
-        viewForUserPictureView.clipsToBounds = true
-        viewForUserPictureView.layer.cornerRadius = viewForUserPictureView.frame.width / 2
-        viewForUserPictureView.layer.borderColor = UIColor.systemYellow.cgColor
-        viewForUserPictureView.layer.borderWidth = 2
-        studentPictureImageView.contentMode = .scaleAspectFill
-        
-        
-        
+extension ProfileViewController: MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            debugPrint("message cancel")
+        case .failed:
+            debugPrint("message failed")
+        case .sent:
+            debugPrint("message sent")
+        default:
+            debugPrint("something wrond")
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
 }

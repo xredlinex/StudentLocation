@@ -19,15 +19,11 @@ class ListViewController: UIViewController {
         
         setBackground()
         students = StudentsInfo().getStudents()
-        
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
         tableView.reloadData()
-
     }
     
     @IBAction func didTapGoBackButton(_ sender: Any) {
         navigationController?.popViewController(animated: false)
     }
 }
-
-
