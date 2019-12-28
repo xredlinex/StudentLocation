@@ -100,6 +100,8 @@ extension LocationViewController: GMSMapViewDelegate {
         for student in students {
             if student.studentId == marker.accessibilityLabel {
                 viewCotnroller.recieveProfile = student
+                viewCotnroller.hideShowLocationButton = true
+                
             }
         }
         navigationController?.pushViewController(viewCotnroller, animated: true)

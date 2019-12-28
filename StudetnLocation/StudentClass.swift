@@ -42,10 +42,11 @@ class StudentsInfo {
         thirdStudent.studentlatitude = 50.4676762
         thirdStudent.studentLongitude = 30.5140305
         
+        let fourthStudent = StudentProfile()
+        fourthStudent.studentlatitude = 50.4421462
+        fourthStudent.studentLongitude = 30.5189102
         
-
-        let fourth = StudentProfile()
         
-        return [firstStudent, secondStudent, thirdStudent, fourth]
+        return [firstStudent, secondStudent, thirdStudent, fourthStudent]
     }
 }

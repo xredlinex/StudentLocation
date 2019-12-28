@@ -21,12 +21,16 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var hideLocationHeightConstraint: NSLayoutConstraint!
     
     
     var studentProfile = StudentProfile()
     var recieveProfile = StudentProfile()
+    
+    
+    var hideShowLocationButton = false
 
-    @IBOutlet weak var hideLocationHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,6 +63,10 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController {
     func feelUserData() {
+        
+        if hideShowLocationButton == true {
+            hideLocationHeightConstraint.priority = UILayoutPriority(rawValue: 800)
+        }
         studentPictureImageView.image = UIImage(named: studentProfile.userPic ?? "noUserPic")
         studentNameTextLabel.text = studentProfile.name ?? "no student name"
         studentLastNameTextLabel.text = studentProfile.lastName ?? "no student last name"
