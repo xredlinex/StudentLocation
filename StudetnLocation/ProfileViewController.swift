@@ -17,6 +17,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var studentAgeTextLabel: UILabel!
     @IBOutlet weak var studentCityTextLabel: UILabel!
     
+    @IBOutlet weak var callView: UIView!
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var emailView: UIView!
+    @IBOutlet weak var locationView: UIView!
     
     
     var studentProfile = StudentProfile()
@@ -29,6 +33,7 @@ class ProfileViewController: UIViewController {
         visualUIUpdate()
         studentProfile = recieveProfile
         feelUserData()
+        
         
 
     }
@@ -67,11 +72,17 @@ extension ProfileViewController {
 
 extension ProfileViewController {
     func visualUIUpdate() {
+        setBackground()
+        callView.customButton()
+        messageView.customButton()
+        emailView.customButton()
+        locationView.customButton()
+        
         
         viewForUserPictureView.isUserInteractionEnabled = false
         viewForUserPictureView.clipsToBounds = true
         viewForUserPictureView.layer.cornerRadius = viewForUserPictureView.frame.width / 2
-        viewForUserPictureView.layer.borderColor = UIColor.white.cgColor
+        viewForUserPictureView.layer.borderColor = UIColor.systemYellow.cgColor
         viewForUserPictureView.layer.borderWidth = 2
         studentPictureImageView.contentMode = .scaleAspectFill
         
