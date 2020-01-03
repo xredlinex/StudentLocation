@@ -31,22 +31,31 @@ class StudentsInfo {
         firstStudent.city = "Kyiv"
         firstStudent.phone = "+380630771072"
         firstStudent.mail = "redik.line@gmail.com"
-        firstStudent.studentlatitude = 50.4442685
-        firstStudent.studentLongitude = 30.4964163
+        firstStudent.studentlatitude = 50.4442339
+        firstStudent.studentLongitude = 30.4967772
+        
         
         let secondStudent = StudentProfile()
         secondStudent.studentId = "1002"
-        secondStudent.studentlatitude = 50.4608976
-        secondStudent.studentLongitude = 30.5223197
+        secondStudent.studentlatitude = 50.4608546
+        secondStudent.studentLongitude = 30.5243962
+        
         
         let thirdStudent = StudentProfile()
-        thirdStudent.studentlatitude = 50.4676762
-        thirdStudent.studentLongitude = 30.5140305
+        thirdStudent.studentlatitude = 50.4422181
+        thirdStudent.studentLongitude = 30.5185508
+   
         
         let fourthStudent = StudentProfile()
-        fourthStudent.studentlatitude = 50.4421462
-        fourthStudent.studentLongitude = 30.5189102
+        fourthStudent.studentlatitude = 50.4678804
+        fourthStudent.studentLongitude = 30.5141128
         
-        return [firstStudent, secondStudent, thirdStudent, fourthStudent]
+        
+        
+        let fifthStudent = StudentProfile()
+        fifthStudent.studentlatitude = 50.4733188
+        fifthStudent.studentLongitude = 30.5896244
+        
+        return [firstStudent, secondStudent, thirdStudent, fourthStudent, fifthStudent]
     }
 }

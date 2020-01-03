@@ -18,7 +18,6 @@ class LocationViewController: UIViewController {
     var recieveData: StudentProfile?
     var defaultLatitude = 50.4304436
     var defaultLongitutde = 30.5645016
-    var defaultZoom: Float = 11
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class LocationViewController: UIViewController {
             students = StudentsInfo().getStudents()
             _ = setMarkers(students)
         }
-        setDefaultCameraView()
+        setCameraView()
         mapView.delegate = self
     }
 
@@ -43,44 +42,44 @@ class LocationViewController: UIViewController {
     @IBAction func didTapShowAllLocationsActionButton(_ sender: Any) {
         students = StudentsInfo().getStudents()
         _ = setMarkers(students)
-        setDefaultCameraView()
+        setCameraView()
     }
 }
 
 // MARK: - Set markers and cordinates
 extension LocationViewController {
-    
-    func setDefaultCameraView() {
-        var customLatitude = Double()
-        var customLongitude = Double()
-        var countLocations: Double = 0
+
+    func setCameraView() {
+        var locations: [CLLocationCoordinate2D] = []
         
         for student in students {
-            if student.studentlatitude != nil && student.studentLongitude != nil {
-                countLocations += 1
-                if let latitude = student.studentlatitude {
-                    customLatitude += latitude
-                }
-                if let longitude = student.studentLongitude {
-                    customLongitude += longitude
-                }
-            }
-            if countLocations > 1 {
-                defaultLatitude = customLatitude / countLocations
-                defaultLongitutde = customLongitude / countLocations
-                defaultZoom = 13
-            } else if countLocations == 1 {
-                defaultLatitude = customLatitude
-                defaultLongitutde = customLongitude
-                defaultZoom = 18
+            if let latitude = student.studentlatitude, let longitude = student.studentLongitude {
+                locations.append(CLLocationCoordinate2DMake(latitude, longitude))
             }
         }
-        let camera = GMSCameraPosition.camera(withLatitude: defaultLatitude,
-                                              longitude: defaultLongitutde,
-                                              zoom: defaultZoom)
-        mapView.camera = camera
+        if locations.count == 1 {
+            guard let latitude = locations.first?.latitude, let longitude = locations.first?.longitude else {
+                return
+            }
+            let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 18)
+            mapView.camera = camera
+        } else if locations.count > 1 {
+            let marker: GMSMarker = GMSMarker(position: locations.first ?? CLLocationCoordinate2D(latitude: defaultLatitude,
+                                                                                                  longitude: defaultLongitutde))
+            var bounds = GMSCoordinateBounds(coordinate: marker.position, coordinate: marker.position)
+            for location in locations {
+                bounds = bounds.includingCoordinate(location)
+                let camera = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(60))
+                self.mapView.animate(with: camera)
+            }
+        } else {
+            let alert = UIAlertController(title: "Sorry", message: "No Student Locations Found", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in}
+            alert.addAction(alertAction)
+            present(alert, animated: true)
+        }
     }
-
+    
     func setMarkers(_ profile: [StudentProfile]) -> [GMSMarker] {
         var markers: [GMSMarker] = []
         for studetns in profile {
