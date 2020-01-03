@@ -15,7 +15,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameTextLabel: UILabel!
     @IBOutlet weak var lastNameTextLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

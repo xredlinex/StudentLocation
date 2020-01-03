@@ -92,8 +92,8 @@
 			children = (
 				977CF03C23B5F8A000C3C82A /* AppDelegate.swift */,
 				977CF03E23B5F8A000C3C82A /* SceneDelegate.swift */,
-				977CF05A23B75AB900C3C82A /* Class+Extension.swift */,
-				977CF05023B5FD6800C3C82A /* StudentClass.swift */,
+				978DA08623BFC77100D543A2 /* UIClassExtension */,
+				978DA08723BFC79100D543A2 /* StudentProfileClass */,
 				97E52E7F23B77389006393D3 /* StudentsList */,
 				97E52E8023B773A3006393D3 /* Location */,
 				97E52E8123B773AB006393D3 /* Profile */,
@@ -103,6 +103,22 @@
 				977CF04A23B5F8A100C3C82A /* Info.plist */,
 			);
 			path = StudetnLocation;
+			sourceTree = "<group>";
+		};
+		978DA08623BFC77100D543A2 /* UIClassExtension */ = {
+			isa = PBXGroup;
+			children = (
+				977CF05A23B75AB900C3C82A /* Class+Extension.swift */,
+			);
+			path = UIClassExtension;
+			sourceTree = "<group>";
+		};
+		978DA08723BFC79100D543A2 /* StudentProfileClass */ = {
+			isa = PBXGroup;
+			children = (
+				977CF05023B5FD6800C3C82A /* StudentClass.swift */,
+			);
+			path = StudentProfileClass;
 			sourceTree = "<group>";
 		};
 		97E52E7E23B7726D006393D3 /* ListTableViewCell */ = {
