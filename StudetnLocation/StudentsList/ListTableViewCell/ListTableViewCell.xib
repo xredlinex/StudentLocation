@@ -39,17 +39,18 @@
                                             <constraint firstAttribute="height" constant="128" id="hdt-kN-rty"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-Ur-bb4">
-                                        <rect key="frame" x="198" y="22.5" width="414" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-Ur-bb4">
+                                        <rect key="frame" x="178" y="22.5" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Tzc-Hr-Xkb"/>
+                                            <constraint firstAttribute="width" constant="300" id="y7T-8X-SdD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm7-9V-Ou0">
-                                        <rect key="frame" x="198" y="82.5" width="414" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm7-9V-Ou0">
+                                        <rect key="frame" x="178" y="82.5" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="l6b-UB-FDk"/>
                                         </constraints>
@@ -58,14 +59,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHV-0o-QHc">
-                                        <rect key="frame" x="198" y="70.5" width="414" height="1"/>
+                                        <rect key="frame" x="178" y="70.5" width="300" height="1"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="xhy-oF-aXr"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-yE-BaI">
-                                        <rect key="frame" x="198" y="130.5" width="414" height="1"/>
+                                        <rect key="frame" x="178" y="130.5" width="300" height="1"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="lel-X5-pAs"/>
@@ -84,12 +85,12 @@
                                     <constraint firstItem="ge1-16-Pa6" firstAttribute="centerY" secondItem="pAa-lk-HHV" secondAttribute="centerY" id="LVI-eB-wd1"/>
                                     <constraint firstItem="ge1-16-Pa6" firstAttribute="leading" secondItem="pAa-lk-HHV" secondAttribute="leading" constant="20" id="N9l-QM-0Tj"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="173" id="PTA-89-zFr"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jpb-Ur-bb4" secondAttribute="trailing" constant="20" id="Ykg-XX-IBB"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jpb-Ur-bb4" secondAttribute="trailing" constant="20" id="Ykg-XX-IBB"/>
                                     <constraint firstItem="BrE-yE-BaI" firstAttribute="top" secondItem="nm7-9V-Ou0" secondAttribute="bottom" constant="8" symbolic="YES" id="aZC-N4-zyy"/>
                                     <constraint firstItem="nm7-9V-Ou0" firstAttribute="leading" secondItem="Jpb-Ur-bb4" secondAttribute="leading" id="g33-Yu-afR"/>
                                     <constraint firstItem="BrE-yE-BaI" firstAttribute="leading" secondItem="nm7-9V-Ou0" secondAttribute="leading" id="n0r-NO-fz2"/>
                                     <constraint firstItem="nm7-9V-Ou0" firstAttribute="top" secondItem="MHV-0o-QHc" secondAttribute="bottom" constant="11" id="vda-D9-8Fl"/>
-                                    <constraint firstItem="Jpb-Ur-bb4" firstAttribute="leading" secondItem="ge1-16-Pa6" secondAttribute="trailing" constant="50" id="xVK-Dm-Nkb"/>
+                                    <constraint firstItem="Jpb-Ur-bb4" firstAttribute="leading" secondItem="ge1-16-Pa6" secondAttribute="trailing" constant="30" id="xVK-Dm-Nkb"/>
                                 </constraints>
                             </view>
                         </subviews>

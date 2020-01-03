@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController {
         
         visualUIUpdate()
         studentProfile = recieveProfile
-        feelUserData()
+        fillUserData()
     }
     
     @IBAction func didTapGoBackButton(_ sender: Any) {
@@ -45,82 +45,23 @@ class ProfileViewController: UIViewController {
             makeACall(number)
         }
     }
+    
     @IBAction func didTapMessageMeActionButton(_ sender: Any) {
-//        if let
-        
+        if let number = studentProfile.phone {
+            sendSms(number)
+        }
     }
     
     @IBAction func didTapEmailMeActionButton(_ sender: Any) {
+        if let mail = studentProfile.mail {
+            sendEmail(mail)
+        }
     }
+    
     @IBAction func didTapLocationActionButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "LocationViewController") as! LocationViewController
         viewController.recieveData = studentProfile
         navigationController?.pushViewController(viewController, animated: false)
-    }
-}
-
-extension ProfileViewController {
-    func makeACall(_ studentPhone: String) {
-        guard let phoneNumber = URL(string: "tel://" + studentPhone) else {
-            return
-        }
-        UIApplication.shared.open(phoneNumber)
-        
-    }
-    func sendSms(_ studentPhone: String) {
-        if MFMessageComposeViewController.canSendText() {
-            let message = MFMessageComposeViewController()
-            message.messageComposeDelegate = self
-            message.recipients = [studentPhone]
-            message.body = ""
-            present(message, animated: true, completion: nil)
-        }
-        
-    }
-    
-    func sendEmail(_ studentMail: String) {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMessageComposeViewController()
-            mail.messageComposeDelegate = self
-            mail.recipients = [studentMail]
-            
-        }
-  
-    }
-    
-}
-
-extension ProfileViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        switch result {
-        case .cancelled:
-            debugPrint("mail cancelled")
-        case .failed:
-            debugPrint("mail failed")
-        case .sent:
-            debugPrint("mail sent")
-        case .saved:
-            debugPrint("mail saved")
-        default:
-            debugPrint("something wrong")
-        }
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension ProfileViewController: MFMessageComposeViewControllerDelegate {
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        switch result {
-        case .cancelled:
-            debugPrint("message cancel")
-        case .failed:
-            debugPrint("message failed")
-        case .sent:
-            debugPrint("message sent")
-        default:
-            debugPrint("something wrond")
-        }
-        controller.dismiss(animated: true, completion: nil)
     }
 }

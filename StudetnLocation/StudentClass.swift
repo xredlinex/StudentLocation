@@ -37,6 +37,7 @@ class StudentsInfo {
         
         let secondStudent = StudentProfile()
         secondStudent.studentId = "1002"
+        secondStudent.city = "Kyiv"
         secondStudent.studentlatitude = 50.4608546
         secondStudent.studentLongitude = 30.5243962
         
@@ -53,6 +54,7 @@ class StudentsInfo {
         
         
         let fifthStudent = StudentProfile()
+        fifthStudent.city = "Kyiv"
         fifthStudent.studentlatitude = 50.4733188
         fifthStudent.studentLongitude = 30.5896244
         
