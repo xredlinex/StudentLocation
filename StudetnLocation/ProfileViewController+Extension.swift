@@ -52,9 +52,8 @@ extension ProfileViewController {
             mail.mailComposeDelegate = self
             mail.setToRecipients([studentMail])
             mail.setSubject("Student Location")
-//            mail.setMessageBody(<#T##body: String##String#>, isHTML: <#T##Bool#>)
+            mail.setMessageBody("", isHTML: true)
             present(mail, animated: true, completion: nil)
-            
         }
     }
 }
