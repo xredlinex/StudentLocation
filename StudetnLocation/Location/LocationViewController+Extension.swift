@@ -10,8 +10,9 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-// MARK: - Set markers and default map view
+// MARK: - set default map view
 extension LocationViewController {
+    
     func setCameraView() {
         var locations: [CLLocationCoordinate2D] = []
         
@@ -42,7 +43,8 @@ extension LocationViewController {
             present(alert, animated: true)
         }
     }
-    
+
+//  MARK: - set markers
     func setMarkers(_ profile: [StudentProfile]) -> [GMSMarker] {
         var markers: [GMSMarker] = []
         

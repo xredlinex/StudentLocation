@@ -36,25 +36,34 @@ extension ProfileViewController {
         UIApplication.shared.open(phoneNumber)
     }
     
-    func sendSms(_ studentPhone: String) {
+    func sendSms(_ studentPhone: String,_ studentLatitude: Double,_ studentLongitude: Double ) {
         if MFMessageComposeViewController.canSendText() {
             let message = MFMessageComposeViewController()
             message.messageComposeDelegate = self
             message.recipients = [studentPhone]
-            message.body = ""
+            message.body = "https://www.google.com/maps/@\(studentLatitude),\(studentLongitude),18z"
+            present(message, animated: true, completion: nil)
+        }
+    }
+    func sendSmsEmpty(_ studentPhone: String) {
+        if MFMessageComposeViewController.canSendText() {
+            let message = MFMessageComposeViewController()
+            message.messageComposeDelegate = self
+            message.recipients = [studentPhone]
+            message.body = "No user cordinates, sorry"
             present(message, animated: true, completion: nil)
         }
     }
     
-    func sendEmail(_ studentMail: String) {
+    func sendEmail(_ studentMail: String,_ studentLatitude: Double,_ studentLongitude: Double ) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
+            let message = EmailMessageBodyText().emailMessageBodyText(studentLatitude, studentLongitude)
             mail.mailComposeDelegate = self
             mail.setToRecipients([studentMail])
             mail.setSubject("Student Location")
-//            mail.setMessageBody(<#T##body: String##String#>, isHTML: <#T##Bool#>)
+            mail.setMessageBody(message, isHTML: true)
             present(mail, animated: true, completion: nil)
-            
         }
     }
 }

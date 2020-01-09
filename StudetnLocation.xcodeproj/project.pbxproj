@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97424F5323C01FEB0067B638 /* MessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97424F5223C01FEB0067B638 /* MessageBody.swift */; };
 		977CF03D23B5F8A000C3C82A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF03C23B5F8A000C3C82A /* AppDelegate.swift */; };
 		977CF03F23B5F8A000C3C82A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977CF03E23B5F8A000C3C82A /* SceneDelegate.swift */; };
 		977CF04423B5F8A000C3C82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977CF04223B5F8A000C3C82A /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		348041140C4E885517C5B359 /* Pods-StudetnLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudetnLocation.release.xcconfig"; path = "Target Support Files/Pods-StudetnLocation/Pods-StudetnLocation.release.xcconfig"; sourceTree = "<group>"; };
+		97424F5223C01FEB0067B638 /* MessageBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBody.swift; sourceTree = "<group>"; };
 		977CF03923B5F8A000C3C82A /* StudetnLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudetnLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		977CF03C23B5F8A000C3C82A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		977CF03E23B5F8A000C3C82A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				977CF05023B5FD6800C3C82A /* StudentClass.swift */,
+				97424F5223C01FEB0067B638 /* MessageBody.swift */,
 			);
 			path = StudentProfileClass;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				977CF05523B6065D00C3C82A /* ProfileViewController.swift in Sources */,
 				97E52E7C23B77264006393D3 /* ListTableViewCell.swift in Sources */,
 				977CF05323B6063D00C3C82A /* LocationViewController.swift in Sources */,
+				97424F5323C01FEB0067B638 /* MessageBody.swift in Sources */,
 				97E52E8723B773E6006393D3 /* ListViewController+Extension.swift in Sources */,
 				97E52E8323B773C5006393D3 /* ProfileViewController+Extension.swift in Sources */,
 				977CF03D23B5F8A000C3C82A /* AppDelegate.swift in Sources */,
