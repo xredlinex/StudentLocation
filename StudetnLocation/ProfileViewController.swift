@@ -57,9 +57,6 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func didTapEmailMeActionButton(_ sender: Any) {
-//        if let mail = studentProfile.mail {
-//            sendEmail(mail)
-//        }
         if let mail = studentProfile.mail {
             if let latitude = studentProfile.studentlatitude, let longitude = studentProfile.studentLongitude {
                 sendEmail(mail, latitude, longitude)
